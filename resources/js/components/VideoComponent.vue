@@ -13,13 +13,13 @@
                     <span @click="deleteImage(index)" class="badge badge-danger del">X</span>
                     <iframe width="100%" height="200" :src="'https://www.youtube.com/embed/'+item.video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="md-form  ">
-                        <input type="text" class="form-control" v-model="item.video" :name="'gallery['+index+'][video]'" placeholder="Codigo del video" aria-describedby="material-addon3" value="">
+                        <input type="text" class="form-control" v-model="item.video" :name="'video['+index+'][video]'" placeholder="Codigo del video" aria-describedby="material-addon3" value="">
                     </div>
                     <div class="md-form m-0">
-                        <input type="text" :name="'gallery['+index+'][title_es]'" v-model="item.title_es"  placeholder="Titulo" class="form-control">
+                        <input type="text" :name="'video['+index+'][title_es]'" v-model="item.title_es"  placeholder="Titulo" class="form-control">
                     </div>
                     <div class="md-form m-0">
-                        <input type="text" :name="'gallery['+index+'][order]'" v-model="item.order"  placeholder="Orden" class="form-control">
+                        <input type="text" :name="'video['+index+'][order]'" v-model="item.order"  placeholder="Orden" class="form-control">
                     </div>
                 </div>
             </draggable>

@@ -77,36 +77,29 @@
             background-color: unset;
         }
         .waves-effect {
-            position: relative;
-            cursor: pointer;
-            overflow: unset;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
+            overflow: inherit;
         }
+
         @media only screen and (max-width: 600px) {
             .fixed-top-sm {
                 position: absolute;
                 background-color: rgb(51, 51, 51);
             }
             .carrousel-sm{
-                padding-top: 5.2rem
+                margin-top: 10rem
             }
             .carousel-caption {
-                top: 5% !important;
+                bottom: 0px !important;
+                left: 15% !important;
+                right: 15% !important;
             }
-            .carousel-caption {
-                font-size: 12px !important;
-            }
+
             .carousel-caption h2{
-                font-size: 14px !important;
-            }
-            .carousel-caption a{
-                margin: 0px !important;
-                padding: 0 2px !important;
                 font-size: 10px !important;
+            }
+
+            .carousel-caption .imagen{
+                padding: 1rem !important;
             }
         }
     </style>
@@ -134,6 +127,6 @@
 <script>
     new WOW().init();
 </script>
-@stack('script')
+    @stack('script')
 </body>
 </html>

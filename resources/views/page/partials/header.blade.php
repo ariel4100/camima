@@ -97,7 +97,7 @@
     {{--</div>--}}
 {{--</div>--}}
 <!--Navbar-->
-<div class="fixed-top">
+<div class="fixed-top fixed-top-sm">
 
     <div class="container-fluid" style="background-color: #444444">
         <div class="row">
@@ -105,7 +105,7 @@
                 <div class="d-flex justify-content-end align-items-center">
                     <p class="m-0 p-0"><a href="" class="text-decoration-none border-right px-3 text-white">FORMULARIO DE CONTACTO</a></p>
                     <i class="material-icons mr-2 pl-3">mail_outline</i>
-                    <p class="m-0 p-0"><a href="" class="text-decoration-none  px-1 text-white">CONTACTO</a></p>
+                    <p class="m-0 p-0"><a href="{{ route('contacto') }}" class="text-decoration-none  px-1 text-white">CONTACTO</a></p>
                     <a href="" class="text-white border-left px-3"><i class="fab fa-facebook"></i></a>
                     <a href="" class="text-white border-left px-3"><i class="fab fa-twitter"></i></a>
                     <a href="" class="text-white border-left px-3"><i class="fas fa-search prefix"></i></a>

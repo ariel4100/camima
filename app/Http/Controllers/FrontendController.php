@@ -19,7 +19,8 @@ class FrontendController extends Controller
     {
         $slider = Slider::where('section','home')->get();
         $contenido = Content::where('section','home')->first();
-        return view('page.home',compact('slider','contenido'));
+        $noticias = News::where('portada',true)->orderBy('id','desc')->get();
+        return view('page.home',compact('slider','contenido','noticias'));
     }
 
     public function quienessomos()
@@ -148,6 +149,14 @@ class FrontendController extends Controller
     }
 
 
+
+
+    public function contacto()
+    {
+        $contenido = Content::where('section','contacto')->get();
+
+        return view('page.contacto',compact('contenido'));
+    }
 
 
 

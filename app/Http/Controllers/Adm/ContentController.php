@@ -30,6 +30,7 @@ class ContentController extends Controller
         //dd($request->all());
         $datos = $request->except('_method','_token');
         $gallery = $request->gallery;
+        $video = $request->video;
         $contenido = Content::firstOrCreate(['section' => $section]);
 
         if (isset($datos['image']))
@@ -37,7 +38,7 @@ class ContentController extends Controller
             $path = $datos['image']->store("uploads/$section/img");
             $datos['image'] = $path;
         }else{
-            $datos['image'] = $contenido->text{'image'};
+            $datos['image'] = $contenido->text{'image'} ?? '';
         }
 
         if (isset($gallery))
@@ -59,6 +60,7 @@ class ContentController extends Controller
 
         $contenido->text = $datos;
         $contenido->image = $gallery;
+        $contenido->video = $video;
         $contenido->order = $request->order;
         $contenido->save();
 

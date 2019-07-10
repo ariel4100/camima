@@ -23060,7 +23060,7 @@ var render = function() {
                     staticClass: "form-control",
                     attrs: {
                       type: "text",
-                      name: "gallery[" + index + "][video]",
+                      name: "video[" + index + "][video]",
                       placeholder: "Codigo del video",
                       "aria-describedby": "material-addon3",
                       value: ""
@@ -23090,7 +23090,7 @@ var render = function() {
                     staticClass: "form-control",
                     attrs: {
                       type: "text",
-                      name: "gallery[" + index + "][title_es]",
+                      name: "video[" + index + "][title_es]",
                       placeholder: "Titulo"
                     },
                     domProps: { value: item.title_es },
@@ -23118,7 +23118,7 @@ var render = function() {
                     staticClass: "form-control",
                     attrs: {
                       type: "text",
-                      name: "gallery[" + index + "][order]",
+                      name: "video[" + index + "][order]",
                       placeholder: "Orden"
                     },
                     domProps: { value: item.order },

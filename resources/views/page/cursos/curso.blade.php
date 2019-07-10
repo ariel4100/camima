@@ -23,25 +23,133 @@
                 <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
                     <div class="card shadow-none ">
                         <div class="card-header border-bottom" role="tab" id="headingOne1" style="background-color: unset">
-                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#destinatarios" aria-expanded="true"
                                aria-controls="collapseOne1" class="d-flex" style="color: unset">
-                                <span class="px-2 py-2 text-center" style="border: 1px solid #133165; border-radius: 50%">+</span>
-                                <h5 class="mb-0">
+                                <span class="px-2 text-center rounded-circle" style="border: 2px solid #133165; border-radius: 50%">+</span>
+                                <h5 class="mb-0 ml-2">
                                     DESTINATARIOS
                                 </h5>
                             </a>
                         </div>
 
-                        <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                        <div id="destinatarios" class="collapse " role="tabpanel" aria-labelledby="headingOne1"
                              data-parent="#accordionEx">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                labore sustainable VHS.
+                                {!!  $curso->destinatarios !!}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card shadow-none ">
+                        <div class="card-header border-bottom" role="tab" id="headingOne1" style="background-color: unset">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#contenido" aria-expanded="true"
+                               aria-controls="collapseOne1" class="d-flex" style="color: unset">
+                                <span class="px-2 text-center rounded-circle" style="border: 2px solid #133165; border-radius: 50%">+</span>
+                                <h5 class="mb-0 ml-2 text-uppercase">
+                                    CONTENIDO del curso
+                                </h5>
+                            </a>
+                        </div>
+
+                        <div id="contenido" class="collapse " role="tabpanel" aria-labelledby="headingOne1"
+                             data-parent="#accordionEx">
+                            <div class="card-body">
+                                {!! $curso->contenido !!}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card shadow-none ">
+                        <div class="card-header border-bottom" role="tab" id="headingOne1" style="background-color: unset">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#inversion" aria-expanded="true"
+                               aria-controls="collapseOne1" class="d-flex" style="color: unset">
+                                <span class="px-2 text-center rounded-circle" style="border: 2px solid #133165; border-radius: 50%">+</span>
+                                <h5 class="mb-0 ml-2 text-uppercase">
+                                    inversion
+                                </h5>
+                            </a>
+                        </div>
+
+                        <div id="inversion" class="collapse " role="tabpanel" aria-labelledby="headingOne1"
+                             data-parent="#accordionEx">
+                            <div class="card-body">
+                                {!!  $curso->inversion !!}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card shadow-none ">
+                        <div class="card-header border-bottom" role="tab" id="headingOne1" style="background-color: unset">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#duracion" aria-expanded="true"
+                               aria-controls="collapseOne1" class="d-flex" style="color: unset">
+                                <span class="px-2 text-center rounded-circle" style="border: 2px solid #133165; border-radius: 50%">+</span>
+                                <h5 class="mb-0 ml-2 text-uppercase">
+                                    duracion
+                                </h5>
+                            </a>
+                        </div>
+
+                        <div id="duracion" class="collapse " role="tabpanel" aria-labelledby="headingOne1"
+                             data-parent="#accordionEx">
+                            <div class="card-body">
+                                {!!  $curso->duracion !!}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card shadow-none ">
+                        <div class="card-header border-bottom" role="tab" id="headingOne1" style="background-color: unset">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#cronograma" aria-expanded="true"
+                               aria-controls="collapseOne1" class="d-flex" style="color: unset">
+                                <span class="px-2 text-center rounded-circle" style="border: 2px solid #133165; border-radius: 50%">+</span>
+                                <h5 class="mb-0 ml-2 text-uppercase">
+                                    cronograma
+                                </h5>
+                            </a>
+                        </div>
+
+                        <div id="cronograma" class="collapse " role="tabpanel" aria-labelledby="headingOne1"
+                             data-parent="#accordionEx">
+                            <div class="card-body">
+                                {!!  $curso->cronograma !!}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card shadow-none ">
+                        <div class="card-header border-bottom" role="tab" id="headingOne1" style="background-color: unset">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#lugar" aria-expanded="true"
+                               aria-controls="collapseOne1" class="d-flex" style="color: unset">
+                                <span class="px-2 text-center rounded-circle" style="border: 2px solid #133165; border-radius: 50%">+</span>
+                                <h5 class="mb-0 ml-2 text-uppercase">
+                                    lugar
+                                </h5>
+                            </a>
+                        </div>
+
+                        <div id="lugar" class="collapse " role="tabpanel" aria-labelledby="headingOne1"
+                             data-parent="#accordionEx">
+                            <div class="card-body">
+                                {!!  $curso->lugar !!}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card shadow-none ">
+                        <div class="card-header border-bottom" role="tab" id="headingOne1" style="background-color: unset">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#capacitador" aria-expanded="true"
+                               aria-controls="collapseOne1" class="d-flex" style="color: unset">
+                                <span class="px-2 text-center rounded-circle" style="border: 2px solid #133165; border-radius: 50%">+</span>
+                                <h5 class="mb-0 ml-2 text-uppercase">
+                                    capacitador
+                                </h5>
+                            </a>
+                        </div>
+
+                        <div id="capacitador" class="collapse " role="tabpanel" aria-labelledby="headingOne1"
+                             data-parent="#accordionEx">
+                            <div class="card-body">
+                                {!!  $curso->capacitador !!}
                             </div>
                         </div>
 

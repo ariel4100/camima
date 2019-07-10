@@ -82,7 +82,7 @@
                 <i class="material-icons">contact_mail</i>Contacto<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="Contacto">
-                <li><a href="{{ route('contenido.index', ['section' => 'contacto', 'type' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Informacion</a></li>
+                <li><a href="{{ route('contenido.index', ['section' => 'contacto']) }}"><i class="fas fa-chevron-right px-4"></i>Informacion</a></li>
             </ul>
         </li>
         <hr>

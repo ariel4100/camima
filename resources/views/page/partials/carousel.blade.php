@@ -1,3 +1,16 @@
+<style>
+    .imagen{
+        background: url('{{ asset('uploads/homeiz.png') }}'), url('{{ asset('uploads/homeder.png') }}');
+        background-repeat: no-repeat;
+        background-position: left, right;
+        padding: 3rem;
+    }
+
+    .carousel-caption h2{
+        text-shadow: 2px 1px #000;
+        font-weight: bold;
+    }
+</style>
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade carrousel-sm" data-ride="carousel">
     <!--Indicators-->
@@ -17,11 +30,13 @@
                          alt="First slide">
                     <div class="mask" style=""></div>
                 </div>
-                <div class="carousel-caption d- none d-md-block wow fadeInLeft" style="right: 0px; left: 0px; text-align: left; top: 30%">
-                    <div class="container" >
-                        <p>{!! $s->text{'text_es'} ?? '' !!}</p>
+                @if($s->text{'text_es'})
+                <div class="carousel-caption d- none d-md-block wow fadeInLeft  d-flex justify-content-center align-items-center" style="right: unset; left: 100px;  bottom: 20%">
+                    <div class="container imagen " >
+                         {!! $s->text{'text_es'} ?? '' !!}
                     </div>
                 </div>
+                @endif
             </div>
         @endforeach
     </div>

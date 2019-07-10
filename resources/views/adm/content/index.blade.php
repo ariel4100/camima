@@ -8,8 +8,8 @@
             <input type="hidden" name="section" value="{{$section}}">
             @if($section == 'home')
                 {{--@dd($contenido)--}}
-                <gallery-component></gallery-component>
-                <video-component></video-component>
+                <gallery-component :galeria="{{ json_encode($contenido->image) ?? '' }}"></gallery-component>
+                <video-component :galeria="{{ json_encode($contenido->video) ?? '' }}"></video-component>
 
             @endif
 
@@ -126,12 +126,10 @@
                 </div>
             @endif
             @if($section == 'contacto')
-                <div class="md-form col-md-6">
+                <div class="md-form col-md-12">
                     <input type="text" id="Titulo" name="title_es" placeholder="Titulo - español" class="form-control" value="{!! $contenido->text{'title_es'} !!}">
                 </div>
-                <div class="md-form col-md-6">
-                    <input type="text" id="Titulo" name="title_en" placeholder="Titulo - ingles" class="form-control" value="{!! $contenido->text{'title_en'} !!}">
-                </div>
+
                 <div class="col-md-12">
                     <div class="md-form">
                         <input type="text" id="Dirección" name="direccion" placeholder="Dirección" class="form-control" value="{!! $contenido->text{'direccion'} !!}">
