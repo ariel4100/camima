@@ -5,10 +5,10 @@
         <a class="text-decoration-none " href="{{ route('noticia.index') }}"><< Volver</a>
         <form class="row" method="POST" action="{{ route('noticia.store') }}" enctype="multipart/form-data">
             @csrf
-            <div class="md-form col-md-6">
+            <div class="md-form col-md-8">
                 <input type="text" id="title_es" name="titulo" placeholder="Titulo" class="form-control">
             </div>
-            <div class="col-md-6  ">
+            <div class="col-md-4">
                 <div class="md-form">
                     <input type="text" id="order" name="orden" class="form-control">
                     <label for="order" class="" >Orden</label>
@@ -16,7 +16,12 @@
             </div>
 
             <div class="md-form col-md-12">
-                <p class="mb-0">Descripcion</p>
+                <p class="mb-0">Descripcion breve</p>
+                <textarea id="text_en" class="md-textarea form-control" name="breve" rows="3"> </textarea>
+            </div>
+
+            <div class="md-form col-md-12">
+                <p class="mb-0">Descripcion amplia</p>
                 <textarea id="text_es" class="md-textarea form-control" name="descripcion" rows="3"> </textarea>
             </div>
 

@@ -73,9 +73,12 @@ class FrontendController extends Controller
         return view('page.asesorias',compact('contenido','slider'));
     }
 
-    public function prensa()
+    public function prensa(Request $request)
     {
-        $novedades = News::where('habilitado',true)->orderBy('orden')->paginate(10);
+        //dd($request->all());
+        $novedades = News::where('titulo', 'LIKE', "%$request->name%")
+            ->where('habilitado',true)
+            ->orderBy('id')->paginate(15);
         $categorias = Category::orderBy('order')->get();
         return view('page.novedades.index',compact('novedades','categorias'));
     }
@@ -96,14 +99,14 @@ class FrontendController extends Controller
 
     public function uom()
     {
-        $slider = Slider::where('section','uom')->get();
+        $slider = Slider::where('section','uom')->orderBy('order')->get();
         $uom = Uom::where('habilitado',true)->orderBy('orden')->get();
         return view('page.gremial.uom',compact('uom','slider'));
     }
 
     public function asimra()
     {
-        $slider = Slider::where('section','asimra')->get();
+        $slider = Slider::where('section','asimra')->orderBy('order')->get();
         $asimra = Asimra::where('habilitado',true)->orderBy('orden')->get();
         return view('page.gremial.asimra',compact('asimra','slider'));
     }
@@ -112,17 +115,19 @@ class FrontendController extends Controller
     {
         if ($gremial == 'uom')
         {
+            $slider = Slider::where('section','uom')->orderBy('order')->get();
             $gremial = Uom::find($id);
             $pdf = Subuom::where('uom_id',$id)->where('habilitado',true)->orderBy('orden')->get();
         }
         if ($gremial == 'asimra')
         {
+            $slider = Slider::where('section','asimra')->orderBy('order')->get();
             //dd($gremial);
             $gremial = Asimra::find($id);
             $pdf = Subasimra::where('asimra_id',$id)->where('habilitado',true)->orderBy('orden')->get();
         }
          //dd($gremial);
-        return view('page.gremial.pdf',compact('pdf','gremial'));
+        return view('page.gremial.pdf',compact('pdf','gremial','slider'));
     }
 
 
@@ -162,10 +167,10 @@ class FrontendController extends Controller
 
     public function buscador(Request $request)
     {
-        //dd(isset($request->name));
+         //dd(isset($request->name));
         if (isset($request->name))
         {
-            $resultado = Product::Orwhere('text->title_'.App::getLocale(), 'LIKE', "%$request->name%")->get();
+            $resultado = Course::Orwhere('titulo', 'LIKE', "%$request->name%")->get();
         }else{
             $resultado = [];
         }

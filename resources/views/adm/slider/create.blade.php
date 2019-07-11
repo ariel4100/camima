@@ -46,8 +46,7 @@
                             <select class="custom-select" name="section" id="inputGroupSelect01">
                                 <option selected>Seleccionar sección...</option>
                                 <option value="nuestrasede">Nuestra Sede</option>
-                                <option value="Asesorias">Asesorias</option>
-                                <option value="cursos">Cursos y Reuniones</option>
+
                             </select>
                         </div>
                     </div>
@@ -64,6 +63,20 @@
                         </div>
                     </div>
                 @endif
+
+                @if($section == 'capacitaciones')
+                    <div class="col-md-12 my-4">
+                        <div class="input-group mb-3">
+
+                            <select class="custom-select" name="section" id="inputGroupSelect01">
+                                <option selected>Seleccionar sección...</option>
+                                <option value="cursos">Cursos estandar</option>
+                                <option value="otros">Cursos especiales</option>
+                            </select>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="col-md-12 my-4 text-right">
                     <button type="submit" class="btn btn-success">Guardar</button>
                 </div>

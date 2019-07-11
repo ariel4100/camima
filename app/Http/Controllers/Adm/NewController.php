@@ -11,7 +11,7 @@ class NewController extends Controller
 {
     public function index()
     {
-        $novedades = News::orderBy('orden')->get();
+        $novedades = News::orderBy('id','desc')->get();
         return view('adm.news.index',compact('novedades'));
     }
 
@@ -23,7 +23,7 @@ class NewController extends Controller
 
     public function store(Request $request)
     {
-        //dd($request->all());
+         //dd($request->all());
 //        $gallery = $request->gallery;
 //        if (isset($gallery))
 //        {
@@ -47,10 +47,11 @@ class NewController extends Controller
 
         $noticia->titulo = $request->titulo;
         $noticia->orden = $request->orden;
+        $noticia->breve= $request->breve;
         $noticia->descripcion = $request->descripcion;
         $noticia->category_id = $request->category_id;
-        $noticia->portada = $request->portada;
-        $noticia->habilitado = $request->habilitado;
+        $noticia->portada = isset($request->portada) ? true : false;
+        $noticia->habilitado = isset($request->habilitado) ? true : false;
         $noticia->save();
         //IMAGE
 
@@ -76,13 +77,13 @@ class NewController extends Controller
         $noticia = News::find($id);
         if(isset($request->ruta))
         {
-            $request->file('ruta')->store('imagenes/novedades');
+            $request->file('ruta')->storeAs('imagenes/novedades/',$request->ruta->getClientOriginalName());
             $noticia->ruta = $request->ruta->getClientOriginalName();
         }
 
         if (isset($request->pdf))
         {
-            $request->file('pdf')->store('archivos');
+            $request->file('pdf')->storeAs('archivos',$request->ruta->getClientOriginalName());
             $noticia->pdf = $request->pdf->getClientOriginalName();
         }
 
@@ -104,10 +105,11 @@ class NewController extends Controller
 //        }
         $noticia->titulo = $request->titulo;
         $noticia->orden = $request->orden;
+        $noticia->breve= $request->breve;
         $noticia->descripcion = $request->descripcion;
         $noticia->category_id = $request->category_id;
-        $noticia->portada = $request->portada;
-        $noticia->habilitado = $request->habilitado;
+        $noticia->portada = isset($request->portada) ? true : false;
+        $noticia->habilitado = isset($request->habilitado) ? true : false;
         $noticia->save();
 
         return redirect()->route('noticia.index')->with('status','Se actualizó correctamente');

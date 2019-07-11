@@ -82,7 +82,7 @@
 {{--</footer>--}}
 {{--<!-- Footer -->--}}
 <!-- Footer -->
-<footer class="page-footer font-small pt-5" style="background-color: #333333">
+<footer class="page-footer font-small pt-5" style="background-color: #444444">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
@@ -92,7 +92,7 @@
 
             <!-- Grid column -->
             <div class="col-md-3 mt-md-0 mt-3">
-                <img src="http://camima.org.ar/imagenes/iconos/logo.png" alt="" class="img-fluid">
+                <img src="{{ asset($logos->image[2]{'image'}) }}" alt="" class="img-fluid">
             </div>
             <!-- Grid column -->
 
@@ -101,9 +101,7 @@
             <!-- Grid column -->
             <div class="col-md-3 mb-md-0 mb-3">
                 <h5 class="text-uppercase" style="color: #3FE2E2 !important">Sobre Camima</h5>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolorem libero, perspiciatis quod temporibus vel voluptatibus. Aperiam modi odio repellat sunt! Aperiam facere harum illum ipsum tempore? Accusamus fugit, necessitatibus.
-                </p>
+                {!! $contacto->text{'text_es'} ?? '' !!}
             </div>
             <!-- Grid column -->
 
@@ -115,25 +113,25 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!" class="text-uppercase">Home</a>
+                        <a href="{{ route('home') }}" class="text-uppercase">Home</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-uppercase">Institucional</a>
+                        <a href="{{ route('quienes.somos') }}" class="text-uppercase">Institucional</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-uppercase">Servicios</a>
+                        <a href="{{ route('nuestra.sede') }}" class="text-uppercase">Servicios</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-uppercase">Gremiales</a>
+                        <a href="{{ route('uom') }}" class="text-uppercase">Gremiales</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-uppercase">Prensa</a>
+                        <a href="{{ route('prensa') }}" class="text-uppercase">Prensa</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-uppercase">Capacitacion</a>
+                        <a href="{{ route('cursos') }}" class="text-uppercase">Capacitacion</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-uppercase">Contacto</a>
+                        <a href="{{ route('contacto') }}" class="text-uppercase">Contacto</a>
                     </li>
                 </ul>
 

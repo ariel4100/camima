@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container p-4">
-        {{--<a href="{{ route('metadatos.create') }}" class="btn btn-primary rounded-pill"><i class="fas fa-plus-circle mx-1"></i>Añadir</a>--}}
+        <a href="{{ route('metadatos.create') }}" class="btn btn-primary rounded-pill"><i class="fas fa-plus-circle mx-1"></i>Añadir</a>
         <div class="row">
             <div class="col-md-12">
                 <table class="table">

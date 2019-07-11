@@ -21,6 +21,9 @@
                         <div class="md-form m-0">
                             <input type="text" :name="'gallery['+index+'][position_es]'" :value="item.position_es" placeholder="Puesto" class="form-control">
                         </div>
+                        <div class="md-form m-0">
+                            <input type="text" :name="'gallery['+index+'][nivel]'" :value="item.nivel" placeholder="Nivel" class="form-control">
+                        </div>
                     </div>
                     <div class="" v-if="section == 'interes'">
                         <div class="md-form m-0" >
@@ -84,6 +87,7 @@
                                 title_en: item.title_en,
                                 position_es: item.position_es,
                                 link: item.link,
+                                nivel: item.nivel,
                             }
                         );
                     });

@@ -5,7 +5,7 @@
     @include('page.partials.carousel')
     <!--/.Slides-->
 
-    <div class="container" style="margin-top: 8rem">
+    <div class="container" style="margin-top: 3rem">
         <nav aria-label="">
             <ol class="list-unstyled d-flex">
                 <li class="ml-2">CAPACITACIÓN</li>

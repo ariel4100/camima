@@ -46,6 +46,9 @@ Route::get('curso/{id}','FrontendController@curso')->name('curso.ver');
 Route::get('contacto','FrontendController@contacto')->name('contacto');
 
 
+Route::get('buscador','FrontendController@buscador')->name('buscador');
+
+
 /***MAIL***/
 Route::post('contacto','MailController@contacto')->name('contacto.mail');
 Route::post('postventa','MailController@postventa')->name('post.venta.mail');

@@ -33,6 +33,14 @@ class ContentController extends Controller
         $video = $request->video;
         $contenido = Content::firstOrCreate(['section' => $section]);
 
+        if (isset($datos['contacto']))
+        {
+            $path = $datos['contacto']->store("uploads/$section/file");
+            $datos['contacto'] = $path;
+        }else{
+            $datos['contacto'] = $contenido->text{'contacto'} ?? '';
+        }
+
         if (isset($datos['image']))
         {
             $path = $datos['image']->store("uploads/$section/img");

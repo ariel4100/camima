@@ -76,9 +76,6 @@
             text-decoration: none;
             background-color: unset;
         }
-        .waves-effect {
-            overflow: inherit;
-        }
 
         @media only screen and (max-width: 600px) {
             .fixed-top-sm {
@@ -125,6 +122,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
 {{--<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>--}}
 <script>
+    $(".mas").removeClass("waves-effect waves-light");
     new WOW().init();
 </script>
     @stack('script')

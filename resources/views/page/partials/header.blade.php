@@ -103,12 +103,12 @@
         <div class="row">
             <div class="container text-white">
                 <div class="d-flex justify-content-end align-items-center">
-                    <p class="m-0 p-0"><a href="" class="text-decoration-none border-right px-3 text-white">FORMULARIO DE CONTACTO</a></p>
+                    <p class="m-0 p-0"><a href="{{ asset($contacto->text{'contacto'} ?? '') }}" target="_blank" class="text-decoration-none border-right px-3 text-white">FORMULARIO DE CONTACTO</a></p>
                     <i class="material-icons mr-2 pl-3">mail_outline</i>
                     <p class="m-0 p-0"><a href="{{ route('contacto') }}" class="text-decoration-none  px-1 text-white">CONTACTO</a></p>
-                    <a href="" class="text-white border-left px-3"><i class="fab fa-facebook"></i></a>
-                    <a href="" class="text-white border-left px-3"><i class="fab fa-twitter"></i></a>
-                    <a href="" class="text-white border-left px-3"><i class="fas fa-search prefix"></i></a>
+                    <a href="{{ $redes->text{'facebook'} }}" target="_blank"  class="text-white border-left px-3"><i class="fab fa-facebook"></i></a>
+                    <a href="{{ $redes->text{'twitter'} }}" target="_blank"  class="text-white border-left px-3"><i class="fab fa-twitter"></i></a>
+                    <a href="{{ route('buscador') }}" class="text-white border-left px-3"><i class="fas fa-search prefix"></i></a>
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@
         <div class="container">
             <!-- Navbar brand -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="http://camima.org.ar/imagenes/iconos/logo.png" alt="" width="200" height="65" class="img-fluid">
+                <img src="{{ asset($logos->image[0]{'image'}) }}" alt="" width="200" height="65" class="img-fluid">
             </a>
 
             <!-- Collapse button -->
@@ -132,26 +132,26 @@
                 <!-- Links -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item d-flex justify-content-center align-items-center"  style="border-right: 1px solid #71A7DE">
-                        <a class="nav-link  py-0 px-4 active" href="{{ url('/') }}">INICIO</a>
+                        <a class="nav-link  py-0 px-4 {{ request()->is('/') ? 'active' : null }}" href="{{ url('/') }}">INICIO</a>
                     </li>
                     <li class="nav-item dropdown d-flex justify-content-center align-items-center" style="border-right: 1px solid #71A7DE">
                         <a class="nav-link py-0 px-4"  id="navbarDropdownMenuLink"
                            aria-haspopup="true" aria-expanded="false">INSTITUCIONAL</a>
                         <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('quienes.somos') }}">QUIENES SOMOS</a>
-                            <a class="dropdown-item" href="{{ route('autoridades') }}">AUTORIDADES</a>
-                            <a class="dropdown-item" href="{{ route('objetivos') }}">OBJETIVOS</a>
-                            <a class="dropdown-item" href="{{ route('mision.vision') }}">MISION Y VISION</a>
-                            <a class="dropdown-item" href="{{ route('enlaces') }}">ENLACES DE INTERES</a>
+                            <a class="dropdown-item mas" href="{{ route('quienes.somos') }}">QUIENES SOMOS</a>
+                            <a class="dropdown-item mas" href="{{ route('autoridades') }}">AUTORIDADES</a>
+                            <a class="dropdown-item mas" href="{{ route('objetivos') }}">OBJETIVOS</a>
+                            <a class="dropdown-item mas" href="{{ route('mision.vision') }}">MISION Y VISION</a>
+                            <a class="dropdown-item mas" href="{{ route('enlaces') }}">ENLACES DE INTERES</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown d-flex justify-content-center align-items-center"  style="border-right: 1px solid #71A7DE">
                         <a class="nav-link  py-0 px-4 " id="navbarDropdownMenuLink"
                            aria-haspopup="true" aria-expanded="false">SERVICIOS</a>
                         <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('nuestra.sede') }}">NUESTRA SEDE</a>
-                            <a class="dropdown-item" href="{{ route('asesorias') }}">ASESORIAS</a>
-                            <a class="dropdown-item" href="{{ route('autoridades') }}">CURSOS Y REUNIONES</a>
+                            <a class="dropdown-item mas" href="{{ route('nuestra.sede') }}">NUESTRA SEDE</a>
+                            <a class="dropdown-item mas" href="{{ route('asesorias') }}">ASESORIAS</a>
+                            <a class="dropdown-item mas" href="{{ route('cursos') }}">CURSOS Y REUNIONES</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown d-flex justify-content-center align-items-center"  style="border-right: 1px solid #71A7DE">

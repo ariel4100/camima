@@ -31,7 +31,11 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('page.components.menu', 'menu');
 
         $contacto = Content::where('section', "contacto")->first();
+        $redes = Content::where('section', "redes")->first();
+        $logos = Content::where('section', "logos")->first();
         View::share('contacto', $contacto);
+        View::share('redes', $redes);
+        View::share('logos', $logos);
 
         //dd($contacto);
         //metadatos

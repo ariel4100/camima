@@ -55,7 +55,11 @@
                                 @break
 
                                 @case('cursos')
-                                <td>Cursos y Reuniones</td>
+                                <td>Cursos estandar</td>
+                                @break
+
+                                @case('otros')
+                                <td>Cursos especiales</td>
                                 @break
 
                                 @case('asimra')

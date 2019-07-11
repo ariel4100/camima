@@ -38,7 +38,6 @@
             <ul class="collapse list-group list-group-flush " id="Venta">
                 <li><a href="{{ route('contenido.index', ['section' => 'nuestrasede']) }}"><i class="fas fa-chevron-right px-4"></i>Nuestra Sede</a></li>
                 <li><a href="{{ route('contenido.index', ['section' => 'asesorias']) }}"><i class="fas fa-chevron-right px-4"></i>Asesorias</a></li>
-                <li><a href="{{ route('contenido.index', ['section' => 'cursosyreuniones']) }}"><i class="fas fa-chevron-right px-4"></i>Cursos y Reuniones</a></li>
 
                 <li><a href="{{ route('slider.list', ['seccion' => 'servicios']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
@@ -74,6 +73,8 @@
             <ul class="collapse list-group list-group-flush " id="Capacitación">
                 <li><a href="{{ route('cursos.index',['cursos' => 'cursos']) }}"><i class="fas fa-chevron-right px-4"></i>Cursos estandar</a></li>
                 <li><a href="{{ route('cursos.index',['cursos' => 'otros']) }}"><i class="fas fa-chevron-right px-4"></i>Cursos especiales</a></li>
+
+                <li><a href="{{ route('slider.list', ['seccion' => 'capacitaciones']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
         <!---CONTACTO---->
@@ -92,9 +93,9 @@
                 <i class="material-icons">settings</i>CAMIMA<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="Logos">
-                <li><a href="{{ route('contenido.index', ['seccion' => 'logos', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Logos</a></li>
-                {{--<li><a href="{{ route('contenido.index', ['seccion' => 'redes', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Redes Sociales</a></li>--}}
-                <li><a href="{{ route('contenido.index', ['seccion' => 'condiciones', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Terminos y Condiciones</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'logos']) }}"><i class="fas fa-chevron-right px-4"></i>Logos</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'redes']) }}"><i class="fas fa-chevron-right px-4"></i>Redes Sociales</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'condiciones']) }}"><i class="fas fa-chevron-right px-4"></i>Terminos y Condiciones</a></li>
                 <li><a href="{{ route('metadatos.index') }}"><i class="fas fa-chevron-right px-4"></i>Metadatos</a></li>
                 <li><a href="{{ route('usuario.index') }}"><i class="fas fa-chevron-right px-4"></i>Usuarios</a></li>
             </ul>

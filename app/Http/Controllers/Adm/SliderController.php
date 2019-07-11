@@ -17,34 +17,33 @@ class SliderController extends Controller
         }
         if ($section == 'servicios')
         {
-            $slider = Slider::where('section','!=', 'home')
-                ->where('section','!=', 'nosotros')
-                ->where('section','!=', 'autoridades')
-                ->where('section','!=', 'misionyvision')
-                ->where('section','!=', 'objetivos')
-                ->where('section','!=', 'interes')
+            $slider = Slider::where('section', 'nuestrasede')
+                ->Orwhere('section', 'asesorias')
+
                 ->orderBy('order')->get();
         }
         if ($section == 'institucional')
         {
-            $slider = Slider::where('section','!=','home')
+            $slider = Slider::where('section','nosotros')
+                ->Orwhere('section', 'autoridades')
+                ->Orwhere('section', 'objetivos')
+                ->Orwhere('section', 'misionyvision')
+                ->Orwhere('section', 'interes')
 
                 ->orderBy('order')->get();
         }
         if ($section == 'gremiales')
         {
-            $slider = Slider::where('section','!=', 'home')
-                ->where('section','!=', 'nosotros')
-                ->where('section','!=', 'autoridades')
-                ->where('section','!=', 'misionyvision')
-                ->where('section','!=', 'objetivos')
-                ->where('section','!=', 'interes')
-                ->where('section','!=', 'nuestrasede')
-                ->where('section','!=', 'asesorias')
-                ->where('section','!=', 'cursos')
+            $slider = Slider::where('section', 'uom')
+                ->Orwhere('section', 'asimra')
                 ->orderBy('order')->get();
         }
-
+        if ($section == 'capacitaciones')
+        {
+            $slider = Slider::where('section', 'cursos')
+                ->Orwhere('section', 'otros')
+                ->orderBy('order')->get();
+        }
         return view('adm.slider.index',compact('section','slider'));
     }
     public function create($section)

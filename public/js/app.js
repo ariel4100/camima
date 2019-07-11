@@ -1803,6 +1803,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['galeria', 'familia', 'section'],
@@ -1838,7 +1841,8 @@ __webpack_require__.r(__webpack_exports__);
             title_es: item.title_es,
             title_en: item.title_en,
             position_es: item.position_es,
-            link: item.link
+            link: item.link,
+            nivel: item.nivel
           });
         }); // for (const item in this.familia) {
         //     this.gallery.push(this.familia);
@@ -22901,6 +22905,18 @@ var render = function() {
                             placeholder: "Puesto"
                           },
                           domProps: { value: item.position_es }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "md-form m-0" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            name: "gallery[" + index + "][nivel]",
+                            placeholder: "Nivel"
+                          },
+                          domProps: { value: item.nivel }
                         })
                       ])
                     ])

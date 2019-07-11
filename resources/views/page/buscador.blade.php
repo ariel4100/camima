@@ -1,21 +1,37 @@
 @extends('page.layouts.app')
-
+@push('style')
+    <style>
+        #myClassicTab .nav-link{
+            color: #000 !important;
+        }
+        #myClassicTab li .active{
+            border-bottom: 2px solid #FFB900 !important;
+        }
+        #myClassicTab li a{
+            border-bottom: 2px solid transparent;
+        }
+    </style>
+@endpush
 @section('content')
+    <div class="container" style="margin-top: 8rem">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="py-2" style="border-bottom: 2px solid #133165; width: 100px">Buscador</h2>
+            </div>
+        </div>
+        <form class="row justify-content-center my-4" action="{{ route('buscador') }}" method="get">
+            <div class="col-md-6">
+                <input type="text" name="name" class="form-control my-2" placeholder="Buscar...">
+            </div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-md text-white px-5 m-0 my-2" style="background-color: #133165">Buscar</button>
+            </div>
+        </form>
 
-    <!--Slides-->
-    @include('page.partials.carousel')
-    <!--/.Slides-->
-    <div class="container" style="margin-top: 3rem">
-        <nav aria-label="">
-            <ol class="list-unstyled d-flex">
-                <li class="ml-2">CAPACITACIÓN</li>
-                <li class="ml-2"> {!! '| '. 'CURSOS Y SEMINARIOS' ?? '' !!}</li>
-            </ol>
-        </nav>
-        <h1 class="my-4">CURSOS Y SEMINARIOS</h1>
-        <hr class="my-4">
-        <div class="row mb-5">
-            @forelse($cursos as $item)
+
+        <div class="row my-5">
+            @forelse($resultado as $item)
+                {{--@dd($item->image[0]['image'])--}}
                 <div class="col-md-1 mt-5 border-bottom text-center">
                     <h1 class="m-0" style="color:#133165;" >{!! $item->dia ?? '' !!}</h1>
                     @switch($item->mes)
@@ -82,7 +98,9 @@
                     <a href="{{ route('curso.ver',$item->id) }}" class="btn btn-md rounded-pill" style="color: #133165; border: 2px solid #133165">Ver más</a>
                 </div>
             @empty
-                <h4>No hay registro</h4>
+                <div class="col">
+                    <h4>No se encontraron resultados</h4>
+                </div>
             @endforelse
         </div>
     </div>
