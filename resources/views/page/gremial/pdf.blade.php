@@ -1,5 +1,15 @@
 @extends('page.layouts.app')
+@push('style')
+    <style>
+        @media only screen and (max-width: 600px){
 
+            .d-n-flex{
+                display: unset !important;
+            }
+        }
+
+    </style>
+@endpush
 @section('content')
 
     <!--Slides-->
@@ -9,7 +19,7 @@
         <nav aria-label="">
             <ol class="list-unstyled d-flex">
                 <li class="ml-2">GREMIALES </li>
-                <li class="ml-2"> {!! '| '. 'UOM' ?? '' !!}</li>
+                {{--<li class="ml-2"> {!! '| '. 'UOM' ?? '' !!}</li>--}}
                 <li class="ml-2"> {!! '| '. $gremial->titulo ?? '' !!}</li>
             </ol>
         </nav>
@@ -18,7 +28,7 @@
         <div class="row mb-5">
             @forelse($pdf as $item)
 
-                <div class="col-md-12  border-bottom py-4 d-flex justify-content-between">
+                <div class="col-md-12  border-bottom py-4 d-flex d-n-flex justify-content-between">
                     <div class="d-flex align-items-center">
                         <img src="{{ asset('imagenes/iconos/download.png') }}" alt="" class="img-fluid">
                         <p class="my-3 ml-3" style="color:#133165;" >{!! $item->titulo ?? '' !!}</p>

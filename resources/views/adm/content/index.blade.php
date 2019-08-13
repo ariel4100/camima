@@ -8,7 +8,7 @@
             <input type="hidden" name="section" value="{{$section}}">
             @if($section == 'home')
                 {{--@dd($contenido)--}}
-                <gallery-component :galeria="{{ json_encode($contenido->image) ?? '' }}"></gallery-component>
+                <gallery-component :section="{{ json_encode($section) }}" :galeria="{{ json_encode($contenido->image) ?? '' }}"></gallery-component>
                 <video-component :galeria="{{ json_encode($contenido->video) ?? '' }}"></video-component>
 
             @endif
@@ -160,7 +160,7 @@
                             <h6>PDF del Encabezado de pagina</h6>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="Footer" name="contacto" lang="es">
-                                <label class="custom-file-label" for="Footer" data-browse="Buscar">Seleccionar Formulario de contacto</label>
+                                <label class="custom-file-label" for="Footer" data-browse="Buscar">Seleccionar Formulario de Inscripción</label>
                             </div>
                             <img src="{{ asset($contenido->text{'contacto'} ?? '') }}" alt="" class="img-fluid my-4">
                         </div>

@@ -12,7 +12,7 @@
     }
 </style>
 <!--Carousel Wrapper-->
-<div id="carousel-example-2" class="carousel slide carousel-fade carrousel-sm" data-ride="carousel">
+<div id="carousel-example-2" class="carousel slide carousel-fade carrousel-sm" data-ride="carousel" >
     <!--Indicators-->
     <ol class="carousel-indicators">
         @foreach($slider as $key=>$s)
@@ -22,7 +22,7 @@
     <!--/.Indicators-->
     <!--Slides-->
 
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" role="listbox"  >
         @foreach($slider as $key=>$s)
             <div class="carousel-item  {{ $key == 0 ? 'active' : null }}">
                 <div class="view">
@@ -31,11 +31,11 @@
                     <div class="mask" style=""></div>
                 </div>
                 @if($s->text{'text_es'})
-                <div class="carousel-caption d- none d-md-block wow fadeInLeft  d-flex justify-content-center align-items-center" style="right: unset; left: 100px;  bottom: 20%">
-                    <div class="container imagen " >
-                         {!! $s->text{'text_es'} ?? '' !!}
+                    <div class="carousel-caption d- none d-md-block wow fadeInLeft  d-flex justify-content-center align-items-center" style="right: unset; left: 100px;  bottom: 20%">
+                        <div class="container imagen " >
+                            {!! $s->text{'text_es'} ?? '' !!}
+                        </div>
                     </div>
-                </div>
                 @endif
             </div>
         @endforeach

@@ -25,6 +25,11 @@
                             <input type="text" :name="'gallery['+index+'][nivel]'" :value="item.nivel" placeholder="Nivel" class="form-control">
                         </div>
                     </div>
+                    <div class="" v-if="section == 'home'">
+                        <div class="md-form m-0" >
+                            <input type="text" :name="'gallery['+index+'][title_es]'" :value="item.title_es"  placeholder="Link" class="form-control">
+                        </div>
+                    </div>
                     <div class="" v-if="section == 'interes'">
                         <div class="md-form m-0" >
                             <input type="text" :name="'gallery['+index+'][title_es]'" :value="item.title_es"  placeholder="Nombre" class="form-control">

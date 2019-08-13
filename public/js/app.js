@@ -1806,6 +1806,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['galeria', 'familia', 'section'],
@@ -22917,6 +22922,22 @@ var render = function() {
                             placeholder: "Nivel"
                           },
                           domProps: { value: item.nivel }
+                        })
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.section == "home"
+                  ? _c("div", {}, [
+                      _c("div", { staticClass: "md-form m-0" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            name: "gallery[" + index + "][title_es]",
+                            placeholder: "Link"
+                          },
+                          domProps: { value: item.title_es }
                         })
                       ])
                     ])

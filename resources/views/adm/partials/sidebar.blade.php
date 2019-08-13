@@ -10,7 +10,7 @@
                 <i class="material-icons">home</i>Inicio<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="Home">
-                <li><a href="{{ route('contenido.index', ['section' => 'home']) }}"><i class="fas fa-chevron-right px-4"></i>Informacion</a></li>
+                <li><a href="{{ route('contenido.index', ['section' => 'home']) }}"><i class="fas fa-chevron-right px-4"></i>Información</a></li>
                 {{--<li><a href="{{ route('contenido.index', ['section' => 'home', 'type' => 'imagen']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>--}}
                 <li><a href="{{ route('slider.list', ['seccion' => 'home']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
@@ -68,11 +68,11 @@
         <!---CAPACITACION---->
         <li class="">
             <a href="#Capacitación" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="material-icons">video_library</i>Capacitación<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">video_library</i>Cursos<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="Capacitación">
-                <li><a href="{{ route('cursos.index',['cursos' => 'cursos']) }}"><i class="fas fa-chevron-right px-4"></i>Cursos estandar</a></li>
-                <li><a href="{{ route('cursos.index',['cursos' => 'otros']) }}"><i class="fas fa-chevron-right px-4"></i>Cursos especiales</a></li>
+                <li><a href="{{ route('cursos.index',['cursos' => 'cursos']) }}"><i class="fas fa-chevron-right px-4"></i>Cursos camima</a></li>
+                <li><a href="{{ route('cursos.index',['cursos' => 'otros']) }}"><i class="fas fa-chevron-right px-4"></i>Cursos empresa</a></li>
 
                 <li><a href="{{ route('slider.list', ['seccion' => 'capacitaciones']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
@@ -83,7 +83,7 @@
                 <i class="material-icons">contact_mail</i>Contacto<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="Contacto">
-                <li><a href="{{ route('contenido.index', ['section' => 'contacto']) }}"><i class="fas fa-chevron-right px-4"></i>Informacion</a></li>
+                <li><a href="{{ route('contenido.index', ['section' => 'contacto']) }}"><i class="fas fa-chevron-right px-4"></i>Información</a></li>
             </ul>
         </li>
         <hr>

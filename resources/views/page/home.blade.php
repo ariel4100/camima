@@ -9,9 +9,9 @@
 @section('content')
     {{--@include('page.partials.carousel')--}}
 
-        <!--Slides-->
-        @include('page.partials.carousel')
-        <!--/.Slides-->
+    <!--Slides-->
+    @include('page.partials.carousel')
+    <!--/.Slides-->
 
     <div class="container my-5">
         <h1>NOTICIAS</h1>
@@ -22,7 +22,7 @@
             @forelse($noticias as $k=>$item)
                 @if($k == 0)
                     <a href="{{ route('show',$item->id) }}" class="col-md-7">
-                        <span class="text-white px-3 p-1 position-absolute" style="background-color: #0AC7FF;">{!! $item->Category->title !!}</span>
+                        <span class="text-white px-3 p-1 position-absolute" style="background-color: #0AC7FF;">{!! $item->Category->title ?? '' !!}</span>
                         <img src="{{ asset('imagenes/novedades/'.$item->ruta) }}" alt="" class="img-fluid">
                     </a>
                     <a href="{{ route('show',$item->id) }}" class="col-md-5" style="color: unset">
@@ -33,10 +33,10 @@
 
 
                 @else
-                    <a href="{{ route('show',$item->id) }}" class="col-md-4 mt-5">
+                    <a href="{{ route('show',$item->id) }}" class="col-md-4 mt-5 wow fadeInUp">
 
                         <div class="" style=" height: 200px; background-image: url('{{ asset('imagenes/novedades/'.$item->ruta) }}'); background-repeat: no-repeat; background-size: cover; background-position: center">
-                            <span class="text-white px-3 p-1" style="background-color: #0AC7FF;">{!! $item->Category->title !!}</span>
+                            <span class="text-white px-3 p-1" style="background-color: #0AC7FF;">{!! $item->Category->title ?? '' !!}</span>
                         </div>
                         {{--<img src="{{ asset('imagenes/novedades/'.$item->ruta) }}" style="height: 200px; width: 100%" alt="" class="img-fluid">--}}
                         <p class="py-1" style="color: #133165">{!! str_limit($item->titulo,40) !!}</p>
@@ -68,14 +68,16 @@
         <h1>NOS APOYAN</h1>
     </div>
     <div class="container multiple-items my-5 ">
-
-            @forelse($contenido->image as $item)
-                <div class="d-flex justify-content-center align-items-center">
+{{--        @dd($contenido->image)--}}
+        @forelse($contenido->image as $item)
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="{{ $item['title_es'] ?? '' }}" target="_blank">
                     <img src="{{ asset($item{'image'}) }}" alt=""  style="height: 100px" class="img-fluid">
-                </div>
-            @empty
+                </a>
+            </div>
+        @empty
 
-            @endforelse
+        @endforelse
 
     </div>
 @endsection
@@ -85,7 +87,9 @@
         $('.multiple-items').slick({
             infinite: true,
             slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
             responsive: [
                 {
                     breakpoint: 1024,

@@ -83,7 +83,7 @@
                 background-color: rgb(51, 51, 51);
             }
             .carrousel-sm{
-                margin-top: 10rem
+                margin-top: -1rem
             }
             .carousel-caption {
                 bottom: 0px !important;

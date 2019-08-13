@@ -17,7 +17,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
-
+    <style>
+        @media only screen and (max-width: 600px){
+            .carrousel-sm {
+                margin-top: -1rem;
+            }
+        }
+    </style>
     @stack('style')
 </head>
 <body  style="background-color: #444444">

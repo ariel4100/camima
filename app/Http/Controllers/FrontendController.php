@@ -78,16 +78,16 @@ class FrontendController extends Controller
         //dd($request->all());
         $novedades = News::where('titulo', 'LIKE', "%$request->name%")
             ->where('habilitado',true)
-            ->orderBy('id')->paginate(15);
-        $categorias = Category::orderBy('order')->get();
+            ->orderBy('id','desc')->paginate(15);
+        $categorias = Category::orderBy('id','desc')->get();
         return view('page.novedades.index',compact('novedades','categorias'));
     }
 
     public function show_index($id) {
         $categoria = Category::find($id);
 //        dd($categoria->news);
-        $categorias = Category::orderBy('order')->get();
-        $novedades = $categoria->news()->orderBy('orden')->paginate(8);
+        $categorias = Category::orderBy('id','desc')->get();
+        $novedades = $categoria->news()->orderBy('id','desc')->paginate(15);
         return view('page.novedades.show_index', compact('novedades', 'categoria', 'categorias'));
     }
 
@@ -99,15 +99,15 @@ class FrontendController extends Controller
 
     public function uom()
     {
-        $slider = Slider::where('section','uom')->orderBy('order')->get();
-        $uom = Uom::where('habilitado',true)->orderBy('orden')->get();
+        $slider = Slider::where('section','uom')->orderBy('id','desc')->get();
+        $uom = Uom::where('habilitado',true)->orderBy('id','desc')->get();
         return view('page.gremial.uom',compact('uom','slider'));
     }
 
     public function asimra()
     {
-        $slider = Slider::where('section','asimra')->orderBy('order')->get();
-        $asimra = Asimra::where('habilitado',true)->orderBy('orden')->get();
+        $slider = Slider::where('section','asimra')->orderBy('id','desc')->get();
+        $asimra = Asimra::where('habilitado',true)->orderBy('id','desc')->get();
         return view('page.gremial.asimra',compact('asimra','slider'));
     }
 
@@ -117,16 +117,16 @@ class FrontendController extends Controller
         {
             $slider = Slider::where('section','uom')->orderBy('order')->get();
             $gremial = Uom::find($id);
-            $pdf = Subuom::where('uom_id',$id)->where('habilitado',true)->orderBy('orden')->get();
+            $pdf = Subuom::where('uom_id',$id)->where('habilitado',true)->orderBy('id','desc')->get();
         }
         if ($gremial == 'asimra')
         {
             $slider = Slider::where('section','asimra')->orderBy('order')->get();
             //dd($gremial);
             $gremial = Asimra::find($id);
-            $pdf = Subasimra::where('asimra_id',$id)->where('habilitado',true)->orderBy('orden')->get();
+            $pdf = Subasimra::where('asimra_id',$id)->where('habilitado',true)->orderBy('id','desc')->get();
         }
-         //dd($gremial);
+        //dd($gremial);
         return view('page.gremial.pdf',compact('pdf','gremial','slider'));
     }
 
@@ -135,14 +135,14 @@ class FrontendController extends Controller
     public function cursos()
     {
         $slider = Slider::where('section','cursos')->get();
-        $cursos= Course::where('section','cursos')->where('habilitado',true)->orderBy('orden')->get();
+        $cursos= Course::where('section','cursos')->where('habilitado',true)->orderBy('id','desc')->get();
         return view('page.cursos.cursos',compact('cursos','slider'));
     }
 
     public function otros()
     {
         $slider = Slider::where('section','otros')->get();
-        $cursos= Course::where('section','otros')->where('habilitado',true)->orderBy('orden')->get();
+        $cursos= Course::where('section','otros')->where('habilitado',true)->orderBy('id','desc')->get();
         return view('page.cursos.otros',compact('cursos','slider'));
     }
 
@@ -170,12 +170,23 @@ class FrontendController extends Controller
          //dd(isset($request->name));
         if (isset($request->name))
         {
-            $resultado = Course::Orwhere('titulo', 'LIKE', "%$request->name%")->get();
+            $resultado = [
+                'cursos' => Course::Orwhere('titulo', 'LIKE', "%$request->name%")->get(),
+                'noticias' => News::Orwhere('titulo', 'LIKE', "%$request->name%")->get(),
+                'subuom' => Subuom::Orwhere('titulo', 'LIKE', "%$request->name%")->get(),
+                'subasimra' => Subasimra::Orwhere('titulo', 'LIKE', "%$request->name%")->get(),
+            ];
+
         }else{
-            $resultado = [];
+            $resultado = [
+                'cursos' => [],
+                'noticias' => [],
+                'subuom' => [],
+                'subasimra' => [],
+            ];
         }
         //$resultado = Product::whereLike(['text->title_'.App::getLocale(), 'text->text_'.App::getLocale()], $request->name)->get();
-        //dd($resultado);
+//        dd($resultado);
         return view('page.buscador',compact('resultado'));
     }
 }

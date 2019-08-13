@@ -99,7 +99,7 @@
             <hr class="clearfix w-100 d-md-none pb-3">
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
+            <div class="col-md-3 d-md-block d-none mb-md-0 mb-3">
                 <h5 class="text-uppercase" style="color: #3FE2E2 !important">Sobre Camima</h5>
                 {!! $contacto->text{'text_es'} ?? '' !!}
             </div>

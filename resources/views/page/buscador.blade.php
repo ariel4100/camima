@@ -28,9 +28,11 @@
             </div>
         </form>
 
-
+        @if(count($resultado['cursos']) > 0)
+            <h2 class="my-5">Cursos</h2>
+        @endif
         <div class="row my-5">
-            @forelse($resultado as $item)
+            @forelse($resultado['cursos'] as $item)
                 {{--@dd($item->image[0]['image'])--}}
                 <div class="col-md-1 mt-5 border-bottom text-center">
                     <h1 class="m-0" style="color:#133165;" >{!! $item->dia ?? '' !!}</h1>
@@ -98,10 +100,65 @@
                     <a href="{{ route('curso.ver',$item->id) }}" class="btn btn-md rounded-pill" style="color: #133165; border: 2px solid #133165">Ver más</a>
                 </div>
             @empty
-                <div class="col">
-                    <h4>No se encontraron resultados</h4>
-                </div>
+
             @endforelse
+                @if(count($resultado['noticias']) > 0)
+                <h2 class="my-5">Noticias</h2>
+                @endif
+                @forelse($resultado['noticias'] as $n)
+                    <div class="col-md-12">
+                        <span class="text-white px-5 p-2" style="background-color: #0AC7FF;">{!! $n->Category->title  ?? ''!!}</span>
+                        <div class="row  border-top py-5">
+                            <div class="col-md-4 wow fadeIn">
+                                <img src="{{ asset('imagenes/novedades/'.$n->ruta) }}" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-md-8">
+                                <a href="{{ route('show',$n->id) }}" class="" style="color: unset">
+                                    <h4 class="font-weight-bold">{!! $n->titulo !!}</h4>
+                                    {!!  $n->breve   !!}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+
+                @endforelse
+
+                @if(count($resultado['subasimra']) > 0)
+                    <h2 class="my-5">Gremiales</h2>
+                @endif
+                @forelse($resultado['subasimra'] as $item)
+
+                    <div class="col-md-12  border-bottom py-4 d-flex d-n-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('imagenes/iconos/download.png') }}" alt="" class="img-fluid">
+                            <p class="my-3 ml-3" style="color:#133165;" >{!! $item->titulo ?? '' !!}</p>
+                        </div>
+                        <a href="{{ asset('archivos/'.$item->pdf) }}" target="_blank" class="btn rounded-pill" style="color: #133165; border: 2px solid #133165">Descargar</a>
+                    </div>
+
+                @empty
+
+                @endforelse
+                @forelse($resultado['subuom'] as $item)
+
+                    <div class="col-md-12  border-bottom py-4 d-flex d-n-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('imagenes/iconos/download.png') }}" alt="" class="img-fluid">
+                            <p class="my-3 ml-3" style="color:#133165;" >{!! $item->titulo ?? '' !!}</p>
+                        </div>
+                        <a href="{{ asset('archivos/'.$item->pdf) }}" target="_blank" class="btn rounded-pill" style="color: #133165; border: 2px solid #133165">Descargar</a>
+                    </div>
+
+                @empty
+
+                @endforelse
+
+                @if(count($resultado['subasimra']) <= 0 && count($resultado['subuom']) <= 0 && count($resultado['noticias']) <= 0 && count($resultado['cursos']) <= 0)
+                    <div class="col">
+                        <h4>No se encontraron resultados</h4>
+                    </div>
+                @endif
         </div>
     </div>
 @endsection

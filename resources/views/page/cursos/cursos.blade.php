@@ -14,7 +14,7 @@
         </nav>
         <h1 class="my-4">CURSOS Y SEMINARIOS</h1>
         <hr class="my-4">
-        <div class="row mb-5">
+        <div class="row justify-content-center text-center mb-5">
             @forelse($cursos as $item)
                 <div class="col-md-1 mt-5 border-bottom text-center">
                     <h1 class="m-0" style="color:#133165;" >{!! $item->dia ?? '' !!}</h1>

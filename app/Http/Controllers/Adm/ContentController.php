@@ -35,7 +35,7 @@ class ContentController extends Controller
 
         if (isset($datos['contacto']))
         {
-            $path = $datos['contacto']->store("uploads/$section/file");
+            $path = $datos['contacto']->storeAs("uploads/$section/file",$request->contacto->getClientOriginalName());
             $datos['contacto'] = $path;
         }else{
             $datos['contacto'] = $contenido->text{'contacto'} ?? '';
@@ -57,7 +57,7 @@ class ContentController extends Controller
                 if (is_string($item['image']))
                 {
                     //dd($item['image']);
-                    $gallery[$k]['image'] = $contenido->image[$k]['image'];
+//                    $gallery[$k]['image'] = $contenido->image[$k]['image'];
                 }else{
                     //dd($item['image']);
                     $path = isset($item['image']) ? $item['image']->store("uploads/$section") : '';
